@@ -8,7 +8,8 @@ class RollDice extends Component {
         super(props);
         this.state = {
             firstDice : 'one' ,
-            secondDice : 'one'
+            secondDice : 'one',
+            rolling : false
         };
 
         this.roll = this.roll.bind(this);
@@ -21,9 +22,14 @@ class RollDice extends Component {
         this.setState(
             {
                 firstDice : faces[Math.floor(Math.random()*faces.length)],
-                secondDice : faces[Math.floor(Math.random()*faces.length)]
+                secondDice : faces[Math.floor(Math.random()*faces.length)],
+                rolling : true
             }
         )
+
+        setTimeout(() => {
+            this.setState({rolling:false})
+        },1000);
     }
 
 
@@ -34,7 +40,9 @@ class RollDice extends Component {
                 <Die face={this.state.firstDice} />
                 <Die face={this.state.secondDice} />
                 </div>
-                <button class = 'btn' onClick={this.roll}>Roll Dice</button>
+        <button onClick={this.roll}>{
+            this.state.rolling ? 'Rolling ...' :'Roll Dice'
+        }</button>
             </div>
         )
     }
