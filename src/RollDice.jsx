@@ -1,4 +1,5 @@
 import React ,{Component} from 'react';
+import './RollDice.css'
 import Die from './Die';
 
 class RollDice extends Component {
@@ -28,10 +29,12 @@ class RollDice extends Component {
 
     render(){
         return(
-            <div>
+            <div className='DiceBox'>
+                <div className="Dices">
                 <Die face={this.state.firstDice} />
                 <Die face={this.state.secondDice} />
-                <button onClick={this.roll}>Roll Dice</button>
+                </div>
+                <button class = 'btn' onClick={this.roll}>Roll Dice</button>
             </div>
         )
     }

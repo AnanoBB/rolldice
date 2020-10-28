@@ -1,0 +1,43 @@
+*{
+    margin:0;
+    padding: 0;
+    background-color: plum;
+}
+
+
+.DiceBox{
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+}
+
+.DiceBox button { 
+   width : 50em;
+   padding: 1.5em;
+   border: 0px;
+   border-radius: 10px;
+    margin-top: 3em;
+    color: orange;
+    background-color: slateblue;
+    font-size: 20px;
+    align-self: center;
+}
+
+.DiceBox button:hover{
+    background-color: darkslateblue;
+    cursor: pointer;
+}
+
+.Dices{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.Die{
+    font-size: 10em;
+    color: slateblue;
+    padding: 0.25em;
+}
+
